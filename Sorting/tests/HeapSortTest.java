@@ -17,11 +17,19 @@ public class HeapSortTest {
 	 */
 	@Test
 	public void testSort() {
-		int[] testArray = { 52, 3, 6, 7, 1, 95, 16 };
-		int[] sortedArray = { 1, 3, 6, 7, 16, 52, 95 };
+		
+		int[] testArray1 = { 2, 9, 7, 6, 5, 8 };
+		int[] sortedArray1 = { 2, 5, 6, 7, 8, 9 };
+		
+		int[] testArray2 = { 22, 3, 857, 29, 26, 758, 322, 1561, 9999, 3 };
+		int[] sortedArray2 = { 3, 3, 22, 26, 29, 322, 758, 857, 1561, 9999};
 
-		HeapSort.sort(testArray);
+		HeapSort.sort(testArray1);
+		HeapSort.sort(testArray2);
 
-		assertEquals(Arrays.toString(sortedArray), Arrays.toString(testArray));
+
+		assertEquals(Arrays.toString(sortedArray1), Arrays.toString(testArray1));
+		assertEquals(Arrays.toString(sortedArray2), Arrays.toString(testArray2));
+
 	}
 }
