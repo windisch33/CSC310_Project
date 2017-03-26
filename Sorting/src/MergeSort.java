@@ -96,18 +96,18 @@ public class MergeSort {
 			++indexA;
 		}
 		
-		if(indexB == arrayB.length-1)
+		if(indexB == arrayB.length)
 		{
-			for(int i = indexC; i < arrayC.length-1; i++)
+			for(int i = indexC; i <= arrayC.length-1; i++)
 			{
-				arrayA[indexA] = arrayC[indexC];
+				arrayA[indexA] = arrayC[i];
 				indexA++;
 			}
 		}else
 		{
-			for(int i = indexB; i < arrayB.length-1; i++)
+			for(int i = indexB; i <= arrayB.length-1; i++)
 			{
-				arrayA[indexA] = arrayB[indexB];
+				arrayA[indexA] = arrayB[i];
 				indexA++;
 			}
 		}
