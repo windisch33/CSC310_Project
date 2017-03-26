@@ -10,7 +10,8 @@ public class MergeSort {
 	private static int[] array;
 
 	/**
-	 * @param inputArray
+	 * takes the array to be sorted 
+	 * @param inputArray the array to be sorted
 	 */
 	public static void sort(int[] inputArray) 
 	{		
@@ -19,7 +20,11 @@ public class MergeSort {
 	}
 
 	/**
-	 * 
+	 * takes an array and copies half of it
+	 * to array b and half to array c
+	 * sends b and c to merge sort until arrays are length 1
+	 * then calls merge method on the three arrays
+	 * @param arrayA the array to be split
 	 */
 	private static void mergeSort(int [] arrayA) {
 		
@@ -64,10 +69,11 @@ public class MergeSort {
 	}
 
 	/**
-	 * 
-	 * @param arrayB
-	 * @param arrayC
-	 * @param arrayA
+	 * merges the three arrays into 
+	 * ascending order
+	 * @param arrayB the first smaller array
+	 * @param arrayC the second smaller array
+	 * @param arrayA the target array
 	 */
 	private static void merge(int[] arrayB, int[] arrayC, int[] arrayA) {
 		
