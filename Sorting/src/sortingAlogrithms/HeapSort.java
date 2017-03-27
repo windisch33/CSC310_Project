@@ -1,6 +1,5 @@
 package sortingAlogrithms;
 
-
 /**
  * A class that implements the HeapSort algorithm
  * @author Robert Windisch
@@ -11,7 +10,7 @@ public class HeapSort {
 	private static int[] array;
 
 	/**
-	 * Takes the input array and 
+	 * Takes the input array and
 	 * calls the appropriate methods
 	 * @param inputArray the array to be sorted
 	 */
@@ -24,6 +23,7 @@ public class HeapSort {
 			for(int i = array.length-1; i >= 0; i--)
 			{
 				heapConstruction(i);
+				//System.out.println(Arrays.toString(array));
 				moveLargest(i);
 			}
 		}
@@ -34,7 +34,7 @@ public class HeapSort {
 	 * unsorted section
 	 * @param index the index to move the largest value to
 	 */
-	private static void moveLargest(int index) 
+	private static void moveLargest(int index)
 	{
 		int temp = array[0];
 		array[0] = array[index];
@@ -44,7 +44,7 @@ public class HeapSort {
 
 	/**
 	 * Constructs the heap portion of the array
-	 * @param end the last index in the heap portion of the array 
+	 * @param end the last index in the heap portion of the array
 	 */
 	public static void heapConstruction(int end)
 	{
@@ -81,7 +81,7 @@ public class HeapSort {
 				{
 					heap = true;
 				}
-				else 
+				else
 				{
 					array[parentIndex] = array[childIndex];
 					parentIndex = childIndex;
