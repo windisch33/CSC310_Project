@@ -60,14 +60,8 @@ public class HeapSort {
 			{
 				int childIndex;
 
-				if (parentIndex == 0 || parentIndex == 1)
-				{
-					childIndex = 2*parentIndex+1;
-				}
-				else
-				{
-					childIndex = 2*parentIndex;
-				}
+				childIndex = 2*parentIndex+1;
+
 
 				if(childIndex < end)
 				{
