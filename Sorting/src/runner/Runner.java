@@ -22,10 +22,6 @@ public class Runner {
 	private final static int medium = 100000;
 	private final static int large = 1000000;
 
-	private final static HeapSort heap = new HeapSort();
-	private final static MergeSort merge = new MergeSort();
-	private final static QuickSort quick = new QuickSort();
-
 	static int [] fileArray = new int[10];
 	/**
 	 * @param args
@@ -36,7 +32,7 @@ public class Runner {
 		System.out.println(Arrays.toString(fileArray));
 
 		long startTime = System.nanoTime();
-		heap.sort(fileArray);
+		HeapSort.sort(fileArray);
 		long endTime = System.nanoTime();
 		long totalTime = (endTime - startTime);
 
