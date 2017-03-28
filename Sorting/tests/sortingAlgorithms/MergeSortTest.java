@@ -12,7 +12,7 @@ import sortingAlogrithms.MergeSort;
  * @author Robert Windisch
  *
  */
-public class MergeSortTest {
+public class MergeSortTest extends SortTest{
 	
 	/**
 	 * Test that the array gets properly sorted
@@ -32,10 +32,14 @@ public class MergeSortTest {
 		MergeSort.sort(testArray1);
 		MergeSort.sort(testArray2);
 		MergeSort.sort(testArray3);
+		MergeSort.sort(testFileArray);
+
 
 		assertEquals(Arrays.toString(sortedArray1), Arrays.toString(testArray1));
 		assertEquals(Arrays.toString(sortedArray2), Arrays.toString(testArray2));
 		assertEquals(Arrays.toString(sortedArray3), Arrays.toString(testArray3));
+		assertEquals(Arrays.toString(testFileSortedArray), Arrays.toString(testFileArray));
+
 	}
 
 }
