@@ -1,5 +1,7 @@
 package sortingAlogrithms;
 
+import java.util.Arrays;
+
 /**
  * A class that implements the HeapSort algorithm
  * @author Robert Windisch
@@ -8,6 +10,9 @@ package sortingAlogrithms;
 public class HeapSort {
 
 	private static int[] array;
+	private static int parentIndex;
+	private static int childIndex;
+	private static int parent;
 
 	/**
 	 * Takes the input array and
@@ -17,14 +22,17 @@ public class HeapSort {
 	public static void sort(int[] inputArray) {
 
 		array = inputArray;
-
+		heapConstruction(array.length-1);
+		//System.out.println(Arrays.toString(array));
+		
 		if(array.length > 1)
 		{
 			for(int i = array.length-1; i >= 0; i--)
 			{
-				heapConstruction(i);
-				//System.out.println(Arrays.toString(array));
 				moveLargest(i, 0);
+				//System.out.println(Arrays.toString(array));
+				heapify(i-1, 0);
+				//System.out.println(Arrays.toString(array));
 			}
 		}
 	}
@@ -48,42 +56,45 @@ public class HeapSort {
 	 */
 	public static void heapConstruction(int end)
 	{
-		boolean heap;
 
 		for(int i = (end/2); i >= 0; i--)
 		{
-			int parentIndex = i;
-			int parent = array[parentIndex];
-			heap = false;
+			heapify(end, i);
+		}
+	}
 
-			while(!heap && 2*parentIndex < end)
+	private static void heapify(int end, int i) {
+		
+		boolean heap;
+		parentIndex = i;
+		parent = array[parentIndex];
+		heap = false;
+
+		while(!heap && 2*parentIndex < end)
+		{
+
+			childIndex = 2*parentIndex+1;
+
+
+			if(childIndex < end)
 			{
-				int childIndex;
-
-				childIndex = 2*parentIndex+1;
-
-
-				if(childIndex < end)
+				if(array[childIndex] < array[childIndex +1])
 				{
-					if(array[childIndex] < array[childIndex +1])
-					{
-						childIndex = childIndex + 1;
-					}
+					childIndex = childIndex + 1;
 				}
-
-				if(parent >= array[childIndex])
-				{
-					heap = true;
-				}
-				else
-				{
-					array[parentIndex] = array[childIndex];
-					parentIndex = childIndex;
-				}
-
-				
 			}
-			array[parentIndex] = parent;
+
+			if(parent >= array[childIndex])
+			{
+				heap = true;
+			}
+			else
+			{
+				moveLargest(parentIndex,childIndex);
+				heapify(end, childIndex);
+			}
+
+			
 		}
 	}
 }
