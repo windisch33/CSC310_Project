@@ -1,6 +1,5 @@
 package sortingAlogrithms;
 
-
 /**
  * A class that implements MergeSort
  * @author Robert Windisch
@@ -11,11 +10,11 @@ public class MergeSort {
 	private static int[] array;
 
 	/**
-	 * takes the array to be sorted 
+	 * takes the array to be sorted
 	 * @param inputArray the array to be sorted
 	 */
-	public static void sort(int[] inputArray) 
-	{		
+	public static void sort(int[] inputArray)
+	{
 		array = inputArray;
 		mergeSort(array);
 	}
@@ -45,15 +44,19 @@ public class MergeSort {
 		{
 			for(int i = 0; i <= ((arrayA.length/2)-1); i++)
 			{
-				arrayB[i] = arrayA[i];			
+				arrayB[i] = arrayA[i];
 			}
 
 			int cIndex = 0;
 			for(int i = arrayA.length/2; i <= arrayA.length-1; i++)
 			{
-				arrayC[cIndex] = arrayA[i];	
+				arrayC[cIndex] = arrayA[i];
 				cIndex++;
 			}
+
+			//System.out.println("Array A: " + Arrays.toString(arrayA));
+			//System.out.println("Array B: " + Arrays.toString(arrayB));
+			//System.out.println("Array C: " + Arrays.toString(arrayC));
 
 			mergeSort(arrayB);
 			mergeSort(arrayC);
@@ -63,7 +66,7 @@ public class MergeSort {
 	}
 
 	/**
-	 * merges the three arrays into 
+	 * merges the three arrays into
 	 * ascending order
 	 * @param arrayB the first smaller array
 	 * @param arrayC the second smaller array
@@ -105,6 +108,8 @@ public class MergeSort {
 				arrayA[indexA] = arrayB[i];
 				indexA++;
 			}
-		}	
+		}
+
+		//System.out.println("Merged Array A: " + Arrays.toString(arrayA));
 	}
 }
