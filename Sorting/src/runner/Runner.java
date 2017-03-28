@@ -12,11 +12,12 @@ import sortingAlogrithms.MergeSort;
 import sortingAlogrithms.QuickSort;
 
 /**
+ * Runs the files through the appropriate sorting algorithms and records results
+ * to csv file
+ * 
  * @author Robert Windisch
- *
  */
 public class Runner {
-
 
 	static String file;
 
@@ -26,15 +27,19 @@ public class Runner {
 
 	private static PrintWriter writer = null;
 
-	static int [] fileArray;
+	static int[] fileArray;
 
 	private static long startTime;
 	private static long totalTime;
 
 	/**
+	 * Creates the print writer for data result file and calls the three file
+	 * methods
+	 * 
 	 * @param args
+	 *            none
 	 */
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
 		try {
 			writer = new PrintWriter("data_results.txt", "UTF-8");
@@ -45,22 +50,21 @@ public class Runner {
 		}
 		writer.println("File Name, HeapSort, MergeSort, QuickSort, ");
 
-		//smallFile();
-		//mediumFile();
+		smallFile();
+		mediumFile();
 		largeFile();
 		writer.close();
 	}
 
 	/**
-	 * 
+	 * Opens each type of large file and sends it to the sorting algorithms
 	 */
 	private static void largeFile() {
 
 		fileArray = new int[large];
 
 		System.out.println("Running Large_Unsorted files");
-		for(int i = 1; i <= 30; i++)
-		{
+		for (int i = 1; i <= 30; i++) {
 			file = "Large_Unsorted_" + i + ".txt";
 			writer.print(file + ", ");
 
@@ -71,8 +75,7 @@ public class Runner {
 		}
 
 		System.out.println("Running Large_Sorted files");
-		for(int i = 1; i <= 30; i++)
-		{
+		for (int i = 1; i <= 30; i++) {
 			file = "Large_Sorted_" + i + ".txt";
 			writer.print(file + ", ");
 
@@ -83,8 +86,7 @@ public class Runner {
 		}
 
 		System.out.println("Running Large_Reverse_Sort files");
-		for(int i = 1; i <= 30; i++)
-		{
+		for (int i = 1; i <= 30; i++) {
 			file = "Large_Reverse_Sort_" + i + ".txt";
 			writer.print(file + ", ");
 
@@ -97,15 +99,14 @@ public class Runner {
 	}
 
 	/**
-	 * 
+	 * Opens each type of medium file and sends it to the sorting algorithms
 	 */
 	private static void mediumFile() {
 
 		fileArray = new int[medium];
 
 		System.out.println("Running Medium_Unsorted files");
-		for(int i = 1; i <= 30; i++)
-		{
+		for (int i = 1; i <= 30; i++) {
 			file = "Medium_Unsorted_" + i + ".txt";
 			writer.print(file + ", ");
 
@@ -116,8 +117,7 @@ public class Runner {
 		}
 
 		System.out.println("Running Medium_Sorted files");
-		for(int i = 1; i <= 30; i++)
-		{
+		for (int i = 1; i <= 30; i++) {
 			file = "Medium_Sorted_" + i + ".txt";
 			writer.print(file + ", ");
 
@@ -128,8 +128,7 @@ public class Runner {
 		}
 
 		System.out.println("Running Medium_Reverse_Sort files");
-		for(int i = 1; i <= 30; i++)
-		{
+		for (int i = 1; i <= 30; i++) {
 			file = "Medium_Reverse_Sort_" + i + ".txt";
 			writer.print(file + ", ");
 
@@ -142,15 +141,13 @@ public class Runner {
 	}
 
 	/**
-	 * 
+	 * Opens each type of small file and sends it to the sorting algorithms
 	 */
-	public static void smallFile()
-	{
+	public static void smallFile() {
 		fileArray = new int[small];
 
 		System.out.println("Running Small_Unsorted files");
-		for(int i = 1; i <= 30; i++)
-		{
+		for (int i = 1; i <= 30; i++) {
 			file = "Small_Unsorted_" + i + ".txt";
 			writer.print(file + ", ");
 
@@ -161,8 +158,7 @@ public class Runner {
 		}
 
 		System.out.println("Running Small_Sorted files");
-		for(int i = 1; i <= 30; i++)
-		{
+		for (int i = 1; i <= 30; i++) {
 			file = "Small_Sorted_" + i + ".txt";
 			writer.print(file + ", ");
 
@@ -173,8 +169,7 @@ public class Runner {
 		}
 
 		System.out.println("Running Small_Reverse_Sort files");
-		for(int i = 1; i <= 30; i++)
-		{
+		for (int i = 1; i <= 30; i++) {
 			file = "Small_Reverse_Sort_" + i + ".txt";
 			writer.print(file + ", ");
 
@@ -186,11 +181,13 @@ public class Runner {
 	}
 
 	/**
+	 * takes file and sends it to be copied to array then runs it through quick
+	 * sort then records sort time in data result file
 	 * 
 	 * @param file2
 	 */
 	private static void quickRunner(String file2) {
-		
+
 		System.out.println("Running Quick Sort on: " + file2);
 
 		fileToArray(fileArray, file);
@@ -202,11 +199,13 @@ public class Runner {
 	}
 
 	/**
+	 * takes file and sends it to be copied to array then runs it through merge
+	 * sort then records sort time in data result file
 	 * 
 	 * @param file2
 	 */
 	private static void mergeRunner(String file2) {
-		
+
 		System.out.println("Running Merge Sort on: " + file2);
 
 		fileToArray(fileArray, file2);
@@ -218,13 +217,15 @@ public class Runner {
 	}
 
 	/**
+	 * takes file and sends it to be copied to array then runs it through heap
+	 * sort then records sort time in data result file
 	 * 
 	 * @param file2
 	 */
 	private static void heapRunner(String file2) {
 
 		System.out.println("Running Heap Sort on: " + file2);
-		
+
 		fileToArray(fileArray, file2);
 		startTime = System.nanoTime();
 		HeapSort.sort(fileArray);
@@ -234,11 +235,14 @@ public class Runner {
 	}
 
 	/**
+	 * takes file and copies it into an array
+	 * 
 	 * @param array
+	 *            to fill with file content
 	 * @param file
+	 *            to be copied to array
 	 */
-	public static void fileToArray(int [] array, String file)
-	{
+	public static void fileToArray(int[] array, String file) {
 		Scanner scanner = null;
 		try {
 			scanner = new Scanner(new File(file));
@@ -247,8 +251,7 @@ public class Runner {
 		}
 
 		int i = 0;
-		while(scanner.hasNextInt())
-		{
+		while (scanner.hasNextInt()) {
 			array[i++] = scanner.nextInt();
 		}
 	}
