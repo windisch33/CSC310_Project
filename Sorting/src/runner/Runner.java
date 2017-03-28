@@ -65,7 +65,7 @@ public class Runner {
 
 		System.out.println("Running Large_Unsorted files");
 		for (int i = 1; i <= 30; i++) {
-			file = "Large_Unsorted_" + i + ".txt";
+			file = "./Test Files/Large_Unsorted_" + i + ".txt";
 			writer.print(file + ", ");
 
 			heapRunner(file);
@@ -76,7 +76,7 @@ public class Runner {
 
 		System.out.println("Running Large_Sorted files");
 		for (int i = 1; i <= 30; i++) {
-			file = "Large_Sorted_" + i + ".txt";
+			file = "./Test Files/Large_Sorted_" + i + ".txt";
 			writer.print(file + ", ");
 
 			heapRunner(file);
@@ -87,7 +87,7 @@ public class Runner {
 
 		System.out.println("Running Large_Reverse_Sort files");
 		for (int i = 1; i <= 30; i++) {
-			file = "Large_Reverse_Sort_" + i + ".txt";
+			file = "./Test Files/Large_Reverse_Sort_" + i + ".txt";
 			writer.print(file + ", ");
 
 			heapRunner(file);
@@ -107,7 +107,7 @@ public class Runner {
 
 		System.out.println("Running Medium_Unsorted files");
 		for (int i = 1; i <= 30; i++) {
-			file = "Medium_Unsorted_" + i + ".txt";
+			file = "./Test Files/Medium_Unsorted_" + i + ".txt";
 			writer.print(file + ", ");
 
 			heapRunner(file);
@@ -118,7 +118,7 @@ public class Runner {
 
 		System.out.println("Running Medium_Sorted files");
 		for (int i = 1; i <= 30; i++) {
-			file = "Medium_Sorted_" + i + ".txt";
+			file = "./Test Files/Medium_Sorted_" + i + ".txt";
 			writer.print(file + ", ");
 
 			heapRunner(file);
@@ -129,7 +129,7 @@ public class Runner {
 
 		System.out.println("Running Medium_Reverse_Sort files");
 		for (int i = 1; i <= 30; i++) {
-			file = "Medium_Reverse_Sort_" + i + ".txt";
+			file = "./Test Files/Medium_Reverse_Sort_" + i + ".txt";
 			writer.print(file + ", ");
 
 			heapRunner(file);
@@ -148,7 +148,7 @@ public class Runner {
 
 		System.out.println("Running Small_Unsorted files");
 		for (int i = 1; i <= 30; i++) {
-			file = "Small_Unsorted_" + i + ".txt";
+			file = "./Test Files/Small_Unsorted_" + i + ".txt";
 			writer.print(file + ", ");
 
 			heapRunner(file);
@@ -159,7 +159,7 @@ public class Runner {
 
 		System.out.println("Running Small_Sorted files");
 		for (int i = 1; i <= 30; i++) {
-			file = "Small_Sorted_" + i + ".txt";
+			file = "./Test Files/Small_Sorted_" + i + ".txt";
 			writer.print(file + ", ");
 
 			heapRunner(file);
@@ -170,7 +170,7 @@ public class Runner {
 
 		System.out.println("Running Small_Reverse_Sort files");
 		for (int i = 1; i <= 30; i++) {
-			file = "Small_Reverse_Sort_" + i + ".txt";
+			file = "./Test Files/Small_Reverse_Sort_" + i + ".txt";
 			writer.print(file + ", ");
 
 			heapRunner(file);
