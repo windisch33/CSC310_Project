@@ -11,7 +11,9 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses(
 {
 		HeapSortTest.class,
-		MergeSortTest.class,})
+		MergeSortTest.class,
+		//QuickSortTest.class
+		})
 
 public class AllTests {
 	

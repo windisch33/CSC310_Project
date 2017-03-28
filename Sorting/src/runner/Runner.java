@@ -23,145 +23,161 @@ public class Runner {
 	private final static int small = 10000;
 	private final static int medium = 100000;
 	private final static int large = 1000000;
-	
+
 	private static PrintWriter writer = null;
 
 	static int [] fileArray;
-	
+
 	private static long startTime;
 	private static long totalTime;
-	
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args){
-		
+
 		try {
 			writer = new PrintWriter("data_results.txt", "UTF-8");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("data_results file not created");
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("UTF-8 not supported");
 		}
-	    writer.println("File Name, HeapSort, MergeSort, QuickSort, ");
+		writer.println("File Name, HeapSort, MergeSort, QuickSort, ");
 
-		smallFile();
-		mediumFile();
+		//smallFile();
+		//mediumFile();
 		largeFile();
 		writer.close();
 	}
-	
+
+	/**
+	 * 
+	 */
 	private static void largeFile() {
-		
-	fileArray = new int[large];
-		
+
+		fileArray = new int[large];
+
+		System.out.println("Running Large_Unsorted files");
 		for(int i = 1; i <= 30; i++)
 		{
 			file = "Large_Unsorted_" + i + ".txt";
 			writer.print(file + ", ");
-			
+
 			heapRunner(file);
 			mergeRunner(file);
 			quickRunner(file);
 			writer.print("\n");
 		}
-		
+
+		System.out.println("Running Large_Sorted files");
 		for(int i = 1; i <= 30; i++)
 		{
 			file = "Large_Sorted_" + i + ".txt";
 			writer.print(file + ", ");
-			
+
 			heapRunner(file);
 			mergeRunner(file);
 			quickRunner(file);
 			writer.print("\n");
 		}
-		
+
+		System.out.println("Running Large_Reverse_Sort files");
 		for(int i = 1; i <= 30; i++)
 		{
 			file = "Large_Reverse_Sort_" + i + ".txt";
 			writer.print(file + ", ");
-			
+
 			heapRunner(file);
 			mergeRunner(file);
 			quickRunner(file);
 			writer.print("\n");
 		}
-		
+
 	}
 
+	/**
+	 * 
+	 */
 	private static void mediumFile() {
-		
-	fileArray = new int[medium];
-		
+
+		fileArray = new int[medium];
+
+		System.out.println("Running Medium_Unsorted files");
 		for(int i = 1; i <= 30; i++)
 		{
 			file = "Medium_Unsorted_" + i + ".txt";
 			writer.print(file + ", ");
-			
+
 			heapRunner(file);
 			mergeRunner(file);
 			quickRunner(file);
 			writer.print("\n");
 		}
-		
+
+		System.out.println("Running Medium_Sorted files");
 		for(int i = 1; i <= 30; i++)
 		{
 			file = "Medium_Sorted_" + i + ".txt";
 			writer.print(file + ", ");
-			
+
 			heapRunner(file);
 			mergeRunner(file);
 			quickRunner(file);
 			writer.print("\n");
 		}
-		
+
+		System.out.println("Running Medium_Reverse_Sort files");
 		for(int i = 1; i <= 30; i++)
 		{
 			file = "Medium_Reverse_Sort_" + i + ".txt";
 			writer.print(file + ", ");
-			
+
 			heapRunner(file);
 			mergeRunner(file);
 			quickRunner(file);
 			writer.print("\n");
 		}
-		
+
 	}
 
+	/**
+	 * 
+	 */
 	public static void smallFile()
 	{
 		fileArray = new int[small];
-		
+
+		System.out.println("Running Small_Unsorted files");
 		for(int i = 1; i <= 30; i++)
 		{
 			file = "Small_Unsorted_" + i + ".txt";
 			writer.print(file + ", ");
-			
+
 			heapRunner(file);
 			mergeRunner(file);
 			quickRunner(file);
 			writer.print("\n");
 		}
-		
+
+		System.out.println("Running Small_Sorted files");
 		for(int i = 1; i <= 30; i++)
 		{
 			file = "Small_Sorted_" + i + ".txt";
 			writer.print(file + ", ");
-			
+
 			heapRunner(file);
 			mergeRunner(file);
 			quickRunner(file);
 			writer.print("\n");
 		}
-		
+
+		System.out.println("Running Small_Reverse_Sort files");
 		for(int i = 1; i <= 30; i++)
 		{
 			file = "Small_Reverse_Sort_" + i + ".txt";
 			writer.print(file + ", ");
-			
+
 			heapRunner(file);
 			mergeRunner(file);
 			quickRunner(file);
@@ -169,34 +185,52 @@ public class Runner {
 		}
 	}
 
+	/**
+	 * 
+	 * @param file2
+	 */
 	private static void quickRunner(String file2) {
 		
+		System.out.println("Running Quick Sort on: " + file2);
+
 		fileToArray(fileArray, file);
 		startTime = System.nanoTime();
 		QuickSort.sort(fileArray);
 		totalTime = (System.nanoTime() - startTime);
 		writer.print(totalTime + ", ");
-		
+
 	}
 
+	/**
+	 * 
+	 * @param file2
+	 */
 	private static void mergeRunner(String file2) {
 		
+		System.out.println("Running Merge Sort on: " + file2);
+
 		fileToArray(fileArray, file2);
 		startTime = System.nanoTime();
 		MergeSort.sort(fileArray);
 		totalTime = (System.nanoTime() - startTime);
 		writer.print(totalTime + ", ");
-		
+
 	}
 
+	/**
+	 * 
+	 * @param file2
+	 */
 	private static void heapRunner(String file2) {
+
+		System.out.println("Running Heap Sort on: " + file2);
 		
 		fileToArray(fileArray, file2);
 		startTime = System.nanoTime();
 		HeapSort.sort(fileArray);
 		totalTime = (System.nanoTime() - startTime);
 		writer.print(totalTime + ", ");
-		
+
 	}
 
 	/**
@@ -215,8 +249,7 @@ public class Runner {
 		int i = 0;
 		while(scanner.hasNextInt())
 		{
-		     array[i++] = scanner.nextInt();
+			array[i++] = scanner.nextInt();
 		}
-
 	}
 }

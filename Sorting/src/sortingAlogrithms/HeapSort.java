@@ -24,7 +24,7 @@ public class HeapSort {
 			{
 				heapConstruction(i);
 				//System.out.println(Arrays.toString(array));
-				moveLargest(i);
+				moveLargest(i, 0);
 			}
 		}
 	}
@@ -34,10 +34,10 @@ public class HeapSort {
 	 * unsorted section
 	 * @param index the index to move the largest value to
 	 */
-	private static void moveLargest(int index)
+	private static void moveLargest(int index, int index2)
 	{
-		int temp = array[0];
-		array[0] = array[index];
+		int temp = array[index2];
+		array[index2] = array[index];
 		array[index] = temp;
 	}
 
@@ -81,8 +81,10 @@ public class HeapSort {
 					parentIndex = childIndex;
 				}
 
-				array[parentIndex] = parent;
+				
 			}
+			array[parentIndex] = parent;
 		}
 	}
 }
+
