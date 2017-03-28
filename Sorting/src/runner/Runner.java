@@ -1,10 +1,10 @@
 package runner;
 
 import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 import sortingAlogrithms.HeapSort;
@@ -48,9 +48,89 @@ public class Runner {
 	    writer.println("File Name, HeapSort, MergeSort, QuickSort, ");
 
 		smallFile();
+		mediumFile();
+		largeFile();
 		writer.close();
 	}
 	
+	private static void largeFile() {
+		
+	fileArray = new int[large];
+		
+		for(int i = 1; i <= 30; i++)
+		{
+			file = "Large_Unsorted_" + i + ".txt";
+			writer.print(file + ", ");
+			
+			heapRunner(file);
+			mergeRunner(file);
+			quickRunner(file);
+			writer.print("\n");
+		}
+		
+		for(int i = 1; i <= 30; i++)
+		{
+			file = "Large_Sorted_" + i + ".txt";
+			writer.print(file + ", ");
+			
+			heapRunner(file);
+			mergeRunner(file);
+			quickRunner(file);
+			writer.print("\n");
+		}
+		
+		for(int i = 1; i <= 30; i++)
+		{
+			file = "Large_Reverse_Sort_" + i + ".txt";
+			writer.print(file + ", ");
+			
+			heapRunner(file);
+			mergeRunner(file);
+			quickRunner(file);
+			writer.print("\n");
+		}
+		
+	}
+
+	private static void mediumFile() {
+		
+	fileArray = new int[medium];
+		
+		for(int i = 1; i <= 30; i++)
+		{
+			file = "Medium_Unsorted_" + i + ".txt";
+			writer.print(file + ", ");
+			
+			heapRunner(file);
+			mergeRunner(file);
+			quickRunner(file);
+			writer.print("\n");
+		}
+		
+		for(int i = 1; i <= 30; i++)
+		{
+			file = "Medium_Sorted_" + i + ".txt";
+			writer.print(file + ", ");
+			
+			heapRunner(file);
+			mergeRunner(file);
+			quickRunner(file);
+			writer.print("\n");
+		}
+		
+		for(int i = 1; i <= 30; i++)
+		{
+			file = "Medium_Reverse_Sort_" + i + ".txt";
+			writer.print(file + ", ");
+			
+			heapRunner(file);
+			mergeRunner(file);
+			quickRunner(file);
+			writer.print("\n");
+		}
+		
+	}
+
 	public static void smallFile()
 	{
 		fileArray = new int[small];
