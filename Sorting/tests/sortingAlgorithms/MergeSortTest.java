@@ -14,25 +14,54 @@ import sortingAlgorithms.MergeSort;
  *
  */
 public class MergeSortTest extends SortTest{
-	
+
 	/**
 	 * Test that the array gets properly sorted
 	 */
 	@Test
-	public void testSort() {
+	public void testArray() {
 
-		int[] testArray1 = { 52, 3, 6, 7, 1, 95, 16 };
-		int[] sortedArray1 = { 1, 3, 6, 7, 16, 52, 95 };
-		
+		int[] testArray1 = { 2, 9, 7, 6, 5, 8 };
+		int[] sortedArray1 = { 2, 5, 6, 7, 8, 9 };
+
 		MergeSort.sort(testArray1);
-		MergeSort.sort(testSmallFileArray);
-		MergeSort.sort(testMediumFileArray);
-		MergeSort.sort(testLargeFileArray);
-
 
 		assertEquals(Arrays.toString(sortedArray1), Arrays.toString(testArray1));
+
+	}
+
+	/**
+	 * Test that the file gets properly sorted
+	 */
+	@Test
+	public void testSmallFile() {
+
+		MergeSort.sort(testSmallFileArray);
+
 		assertEquals(Arrays.toString(testSmallFileSortedArray), Arrays.toString(testSmallFileArray));
+
+	}
+
+	/**
+	 * Test that the file gets properly sorted
+	 */
+	@Test
+	public void testMediumFile() {
+
+		MergeSort.sort(testMediumFileArray);
+
 		assertEquals(Arrays.toString(testMediumFileSortedArray), Arrays.toString(testMediumFileArray));
+
+	}
+
+	/**
+	 * Test that the file gets properly sorted
+	 */
+	@Test
+	public void testLargeFile() {
+
+		MergeSort.sort(testLargeFileArray);
+
 		assertEquals(Arrays.toString(testLargeFileSortedArray), Arrays.toString(testLargeFileArray));
 
 	}
