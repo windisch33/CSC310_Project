@@ -88,7 +88,7 @@ public class Runner {
 		System.out.println("Running Large_Reverse_Sort files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Large_Reverse_Sort_" + i + ".txt";
-			writer.print("Large_Reverse_Sort" + i + ", ");
+			writer.print("Large_Reverse_Sort_" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);
@@ -171,7 +171,7 @@ public class Runner {
 		System.out.println("Running Small_Reverse_Sort files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Small_Reverse_Sort_" + i + ".txt";
-			writer.print("Small_Reverse_Sort" + i + ", ");
+			writer.print("Small_Reverse_Sort_" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);
