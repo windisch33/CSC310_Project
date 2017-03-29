@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import sortingAlogrithms.MergeSort;
+import sortingAlgorithms.MergeSort;
 
 /**
  * Tests the MergeSort class

@@ -7,9 +7,9 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
-import sortingAlogrithms.HeapSort;
-import sortingAlogrithms.MergeSort;
-import sortingAlogrithms.QuickSort;
+import sortingAlgorithms.HeapSort;
+import sortingAlgorithms.MergeSort;
+import sortingAlgorithms.QuickSort;
 
 /**
  * Runs the files through the appropriate sorting algorithms and records results
@@ -66,7 +66,7 @@ public class Runner {
 		System.out.println("Running Large_Unsorted files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Large_Unsorted_" + i + ".txt";
-			writer.print(file + ", ");
+			writer.print("Large_Unsorted_" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);
@@ -77,7 +77,7 @@ public class Runner {
 		System.out.println("Running Large_Sorted files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Large_Sorted_" + i + ".txt";
-			writer.print(file + ", ");
+			writer.print("Large_Sorted_" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);
@@ -88,7 +88,7 @@ public class Runner {
 		System.out.println("Running Large_Reverse_Sort files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Large_Reverse_Sort_" + i + ".txt";
-			writer.print(file + ", ");
+			writer.print("Large_Reverse_Sort" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);
@@ -108,7 +108,7 @@ public class Runner {
 		System.out.println("Running Medium_Unsorted files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Medium_Unsorted_" + i + ".txt";
-			writer.print(file + ", ");
+			writer.print("Medium_Unsorted_" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);
@@ -119,7 +119,7 @@ public class Runner {
 		System.out.println("Running Medium_Sorted files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Medium_Sorted_" + i + ".txt";
-			writer.print(file + ", ");
+			writer.print("Medium_Sorted_" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);
@@ -130,7 +130,7 @@ public class Runner {
 		System.out.println("Running Medium_Reverse_Sort files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Medium_Reverse_Sort_" + i + ".txt";
-			writer.print(file + ", ");
+			writer.print("Medium_Reverse_Sort_" + i + ", ");;
 
 			heapRunner(file);
 			mergeRunner(file);
@@ -149,7 +149,7 @@ public class Runner {
 		System.out.println("Running Small_Unsorted files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Small_Unsorted_" + i + ".txt";
-			writer.print(file + ", ");
+			writer.print("Small_Unsorted_" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);
@@ -160,7 +160,7 @@ public class Runner {
 		System.out.println("Running Small_Sorted files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Small_Sorted_" + i + ".txt";
-			writer.print(file + ", ");
+			writer.print("Small_Sorted_" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);
@@ -171,7 +171,7 @@ public class Runner {
 		System.out.println("Running Small_Reverse_Sort files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Small_Reverse_Sort_" + i + ".txt";
-			writer.print(file + ", ");
+			writer.print("Small_Reverse_Sort" + i + ", ");
 
 			heapRunner(file);
 			mergeRunner(file);

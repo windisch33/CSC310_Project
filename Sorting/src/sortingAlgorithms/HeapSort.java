@@ -1,4 +1,4 @@
-package sortingAlogrithms;
+package sortingAlgorithms;
 
 /**
  * A class that implements the HeapSort algorithm
