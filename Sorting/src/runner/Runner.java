@@ -130,7 +130,8 @@ public class Runner {
 		System.out.println("Running Medium_Reverse_Sort files");
 		for (int i = 1; i <= 30; i++) {
 			file = "./Test Files/Medium_Reverse_Sort_" + i + ".txt";
-			writer.print("Medium_Reverse_Sort_" + i + ", ");;
+			writer.print("Medium_Reverse_Sort_" + i + ", ");
+			;
 
 			heapRunner(file);
 			mergeRunner(file);

@@ -1,7 +1,5 @@
 package sortingAlgorithms;
 
-import java.util.Arrays;
-
 /**
  * A class the implements the quick sort algorithm
  * 
@@ -9,29 +7,69 @@ import java.util.Arrays;
  */
 public class QuickSort {
 
+	/**
+	 * Takes the array to be sorted
+	 * 
+	 * @param array
+	 *            to be sorted
+	 */
 	public static void sort(int[] array) {
-		QuickSort(array, 0, array.length - 1);
+		quickSort(array, 0, array.length - 1);
 	}
 
-	public static void QuickSort(int[] array, int lower, int upper) {
+	/**
+	 * Takes the array and partitions it until sorted
+	 * 
+	 * @param array
+	 *            to be sorted
+	 * @param lower
+	 *            bound of sorted section
+	 * @param upper
+	 *            bound of sorted section
+	 */
+	private static void quickSort(int[] array, int lower, int upper) {
 
-		if(lower < upper)
-		{
-			int median = calcMedian(array, lower, upper);
-			int partition = partition(array, lower, upper, median );
-			QuickSort(array, lower, partition - 1);
-			QuickSort(array, partition + 1, upper);
+		if (lower < upper + 1) {
+			int median = calcAvg(array, lower, upper);
+			int[] partitions = partition(array, lower, upper, median);
+			quickSort(array, lower, partitions[0] - 1);
+			quickSort(array, partitions[1] + 1, upper);
 		}
 	}
 
-	private static int calcMedian(int[] array, int lower, int upper) {
-	
-		return (array[lower]+array[upper])/2;
+	/**
+	 * Calculates average value to use as comparison for partitioning
+	 * 
+	 * @param array
+	 * @param lower
+	 *            bound of section of array to be sorted
+	 * @param upper
+	 *            bound of section of array to be sorted
+	 * @return the average value
+	 */
+	private static int calcAvg(int[] array, int lower, int upper) {
+
+		return (array[lower] + array[upper]) / 2;
 	}
 
-	public static int partition(int[] array, int lower, int upper, int mid) {
+	/**
+	 * Partitions the array into three sections lower values, equal values, and
+	 * greater values
+	 * 
+	 * @param array
+	 *            to be partitioned
+	 * @param lower
+	 *            bound of section to be partitioned
+	 * @param upper
+	 *            bound of section to be partitioned
+	 * @param mid
+	 *            value for comparison
+	 * @return the lower and upper of the new sections
+	 */
+	private static int[] partition(int[] array, int lower, int upper, int mid) {
+		int[] results = new int[2];
 		int less = lower;
-		int pivot = 0;
+		int pivot = lower;
 		int greater = upper;
 
 		while (pivot <= greater) {
@@ -47,9 +85,22 @@ public class QuickSort {
 			}
 
 		}
-		return less;
+
+		results[0] = less;
+		results[1] = greater;
+		//System.out.println("lower: " + less + " Upper: " + greater + "mid:" + mid);
+		return results;
 	}
 
+	/**
+	 * Swaps to values in array
+	 * 
+	 * @param array
+	 * @param index
+	 *            of first value to be swapped
+	 * @param index2
+	 *            of second value to be swapped
+	 */
 	private static void swap(int[] array, int index, int index2) {
 		int temp = array[index2];
 		array[index2] = array[index];

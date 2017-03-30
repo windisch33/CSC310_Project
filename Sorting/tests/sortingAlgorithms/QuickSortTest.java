@@ -20,8 +20,8 @@ public class QuickSortTest extends SortTest{
 	@Test
 	public void testArray() {
 
-		int[] testArray1 = { 2, 9, 7, 6, 5, 8 };
-		int[] sortedArray1 = { 2, 5, 6, 7, 8, 9 };
+		int[] testArray1 = { 2, 9, 7, 6, 5, 8, 6 };
+		int[] sortedArray1 = { 2, 5, 6, 6, 7, 8, 9 };
 
 		QuickSort.sort(testArray1);
 

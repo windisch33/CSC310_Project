@@ -12,7 +12,7 @@ import org.junit.runners.Suite;
 {
 		HeapSortTest.class,
 		MergeSortTest.class,
-		//QuickSortTest.class,
+		QuickSortTest.class,
 		})
 
 public class AllTests {
