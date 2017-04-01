@@ -28,28 +28,52 @@ public class QuickSort {
 	 *            bound of sorted section
 	 */
 	private static void quickSort(int[] array, int lower, int upper) {
-
+		int median; 
+		
 		if (lower < upper + 1) {
-			int median = calcAvg(array, lower, upper);
+			if(upper-lower > 145)
+			{
+				median = calcMedian(array, lower, upper);
+			}else
+			{
+				median = array[lower];
+			}
 			int[] partitions = partition(array, lower, upper, median);
 			quickSort(array, lower, partitions[0] - 1);
 			quickSort(array, partitions[1] + 1, upper);
+			
 		}
+		
 	}
 
 	/**
-	 * Calculates average value to use as comparison for partitioning
+	 * Calculates median value to use as comparison for partitioning
 	 * 
 	 * @param array
 	 * @param lower
 	 *            bound of section of array to be sorted
 	 * @param upper
 	 *            bound of section of array to be sorted
-	 * @return the average value
+	 * @return the median value
 	 */
-	private static int calcAvg(int[] array, int lower, int upper) {
-
-		return (array[lower] + array[upper]) / 2;
+	private static int calcMedian(int[] array, int lower, int upper) {
+		
+			if(array[lower] < array[upper] && array[lower] > array[upper/2])
+			{
+				return array[lower];
+			}
+			if(array[lower] > array[upper] && array[lower] < array[upper/2])
+			{
+				return array[lower];
+			}
+			if(array[upper] < array[lower] && array[upper] > array[upper/2])
+			{
+				return array[upper];
+			}if(array[upper] > array[lower] && array[upper] < array[upper/2])
+			{
+				return array[upper];
+			}
+		return array[upper/2];
 	}
 
 	/**
@@ -67,7 +91,7 @@ public class QuickSort {
 	 * @return the lower and upper of the new sections
 	 */
 	private static int[] partition(int[] array, int lower, int upper, int mid) {
-		int[] results = new int[2];
+		int[] results = {0,0};
 		int less = lower;
 		int pivot = lower;
 		int greater = upper;
@@ -88,7 +112,7 @@ public class QuickSort {
 
 		results[0] = less;
 		results[1] = greater;
-		//System.out.println("lower: " + less + " Upper: " + greater + "mid:" + mid);
+		//System.out.println("Lower: " + less + " Upper: " + greater + " Mid:" + mid);
 		return results;
 	}
 
