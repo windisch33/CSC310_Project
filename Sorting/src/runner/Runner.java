@@ -194,7 +194,7 @@ public class Runner {
 		fileToArray(fileArray, file);
 		startTime = System.nanoTime();
 		QuickSort.sort(fileArray);
-		totalTime = (System.nanoTime() - startTime);
+		totalTime = ((System.nanoTime() - startTime)/1000000);
 		writer.print(totalTime + ", ");
 
 	}
@@ -212,7 +212,7 @@ public class Runner {
 		fileToArray(fileArray, file2);
 		startTime = System.nanoTime();
 		MergeSort.sort(fileArray);
-		totalTime = (System.nanoTime() - startTime);
+		totalTime = ((System.nanoTime() - startTime)/1000000);
 		writer.print(totalTime + ", ");
 
 	}
@@ -230,7 +230,7 @@ public class Runner {
 		fileToArray(fileArray, file2);
 		startTime = System.nanoTime();
 		HeapSort.sort(fileArray);
-		totalTime = (System.nanoTime() - startTime);
+		totalTime = ((System.nanoTime() - startTime)/1000000);
 		writer.print(totalTime + ", ");
 
 	}
